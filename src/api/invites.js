@@ -8,17 +8,43 @@ const API_BASE = httpsSafeBase.replace(/\/+$/, '')
 const DEFAULT_PROD_API_BASE = 'https://api.wecreateproblems.net'
 // const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:3000'
 
+const MASTER_TOKEN_KEY = 'master_admin_token'
+
+export function getStoredMasterToken() {
+  if (typeof sessionStorage === 'undefined') return null
+  return sessionStorage.getItem(MASTER_TOKEN_KEY)
+}
+
+export function setStoredMasterToken(token) {
+  if (typeof sessionStorage !== 'undefined' && token) sessionStorage.setItem(MASTER_TOKEN_KEY, token)
+}
+
+export function clearStoredMasterToken() {
+  if (typeof sessionStorage !== 'undefined') sessionStorage.removeItem(MASTER_TOKEN_KEY)
+}
+
+function masterAuthHeaders() {
+  const t = getStoredMasterToken()
+  return t ? { Authorization: `Bearer ${t}` } : {}
+}
+
 async function request(path, options = {}) {
+  const { skipMasterAuth, ...rest } = options
   const primaryBase = API_BASE
   const fallbackBase = primaryBase === DEFAULT_PROD_API_BASE ? null : DEFAULT_PROD_API_BASE
-  return requestWithBase(path, options, primaryBase, fallbackBase)
+  return requestWithBase(path, { ...rest, skipMasterAuth }, primaryBase, fallbackBase)
 }
 
 async function requestWithBase(path, options, base, fallbackBase) {
+  const { skipMasterAuth, ...fetchOpts } = options
   const url = `${base}${path}`
   const res = await fetch(url, {
-    headers: { 'Content-Type': 'application/json', ...options.headers },
-    ...options,
+    headers: {
+      'Content-Type': 'application/json',
+      ...(skipMasterAuth ? {} : masterAuthHeaders()),
+      ...fetchOpts.headers,
+    },
+    ...fetchOpts,
   })
   const contentType = (res.headers.get('content-type') || '').toLowerCase()
   const isJson = contentType.includes('application/json')
@@ -44,6 +70,16 @@ async function requestWithBase(path, options, base, fallbackBase) {
     throw new Error('Backend returned a non-JSON response')
   }
   return res.json()
+}
+
+/** Exchange DB-backed master credentials for a short-lived JWT used on admin invite API calls. */
+export async function masterLogin(username, password) {
+  const data = await request('/api/master-login', {
+    method: 'POST',
+    body: JSON.stringify({ username, password }),
+    skipMasterAuth: true,
+  })
+  return data.token
 }
 
 export async function getInvites() {

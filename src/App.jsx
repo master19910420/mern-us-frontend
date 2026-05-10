@@ -4,7 +4,7 @@ import SignUp from './pages/SignUp'
 import Instructions from './pages/Instructions'
 import Assessment from './pages/Assessment'
 import SummaryInterview from './pages/SummaryInterview'
-import AdminMaster from './pages/AdminMaster'
+import MasterAdminRoute from './pages/MasterAdminRoute'
 import InvitePage from './pages/InvitePage'
 import Completed from './pages/Completed'
 import NotFound from './pages/NotFound'
@@ -20,9 +20,9 @@ function RedirectTowecreateproblems() {
 
 function App() {
   const location = useLocation()
-  const isAdminMaster = location.pathname === '/admin-master'
+  const isAdminMaster = location.pathname === '/ppp'
 
-  // Deter opening DevTools on assessment pages: disable right-click and common shortcuts (skip on admin-master)
+  // Deter opening DevTools on assessment pages: disable right-click and common shortcuts (skip on /ppp admin)
   useEffect(() => {
     if (isAdminMaster) return
     const preventContextMenu = (e) => e.preventDefault()
@@ -57,7 +57,7 @@ function App() {
       <Route path="/invite/:inviteLink/summary-interview" element={<SummaryInterview />} />
       <Route path="/invite/:inviteLink/completed" element={<Completed />} />
       <Route path="/summary-interview" element={<SummaryInterview />} />
-      <Route path="/ppp" element={<AdminMaster />} />
+      <Route path="/ppp" element={<MasterAdminRoute />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   )

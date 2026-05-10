@@ -146,7 +146,7 @@ function sortInvites(invites, sortBy, sortDir) {
   })
 }
 
-export default function AdminMaster() {
+export default function AdminMaster({ onLogout } = {}) {
   const [invites, setInvites] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
@@ -357,8 +357,26 @@ export default function AdminMaster() {
     <div className={styles.page}>
       <div className={styles.wrapper}>
         <header className={styles.header}>
-          <h1 className={styles.title}>Admin – Invite links</h1>
-          <p className={styles.subtitle}>CRUD for invite links</p>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'flex-start',
+              gap: 16,
+              flexWrap: 'wrap',
+              marginBottom: 16,
+            }}
+          >
+            <div>
+              <h1 className={styles.title}>Admin – Invite links</h1>
+              <p className={styles.subtitle}>CRUD for invite links</p>
+            </div>
+            {onLogout ? (
+              <button type="button" className={styles.btnSecondary} onClick={onLogout}>
+                Sign out
+              </button>
+            ) : null}
+          </div>
 
           <div className={styles.addBlock}>
             <div className={styles.addTypeRow}>
