@@ -1,0 +1,373 @@
+/* ——— Page ——— */
+.page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  padding: clamp(1.25rem, 3.5vh, 2.25rem) clamp(1.25rem, 4vw, 2.75rem);
+  background: var(--bg);
+  background-image: radial-gradient(ellipse 90% 60% at 50% -25%, rgba(34, 197, 94, 0.055), transparent 52%);
+  overflow-y: auto;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 54rem;
+  margin-top: auto;
+  margin-bottom: auto;
+  flex-shrink: 0;
+}
+
+/* ——— Card ——— */
+.card {
+  position: relative;
+  background: linear-gradient(180deg, rgba(34, 197, 94, 0.08) 0%, var(--bg-elevated) 42%, var(--bg-elevated) 100%);
+  border-radius: 20px;
+  border: 1px solid var(--border-input);
+  box-shadow: 0 24px 48px rgba(2, 6, 23, 0.45);
+  padding: clamp(2rem, 5vw, 2.75rem) clamp(1.75rem, 4vw, 2.5rem) clamp(2.25rem, 5vw, 2.75rem);
+  overflow: hidden;
+  min-height: calc(100dvh - clamp(2.5rem, 7vh, 4.5rem));
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, rgba(34, 197, 94, 0.5), transparent);
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+/* ——— Header ——— */
+.header {
+  margin-bottom: clamp(1.75rem, 4vw, 2.25rem);
+  padding-bottom: clamp(1.25rem, 3vw, 1.75rem);
+  border-bottom: 1px solid var(--border-input);
+}
+
+.kicker {
+  margin: 0 0 0.625rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  line-height: 1.4;
+}
+
+.instructionsTitle {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.625rem, 4vw, 2rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.subtitle {
+  margin: 0;
+  max-width: 42rem;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ——— Guidelines section ——— */
+.listCard {
+  margin-bottom: clamp(1.5rem, 4vw, 2rem);
+  padding: clamp(1.25rem, 3vw, 1.625rem) clamp(1.25rem, 3vw, 1.75rem);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, var(--surface) 100%);
+  border: 1px solid var(--border-input);
+  border-radius: 16px;
+}
+
+.sectionTitle {
+  margin: 0 0 1.125rem;
+  padding: 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  line-height: 1.35;
+}
+
+.instructionsList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: instruction;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+  font-feature-settings: 'kern' 1, 'liga' 1;
+}
+
+.instructionsList li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.875rem;
+  padding-left: 0;
+  margin-bottom: 1.125rem;
+}
+
+.instructionsList li:last-child {
+  margin-bottom: 0;
+}
+
+.instructionsList li::before {
+  content: counter(instruction);
+  counter-increment: instruction;
+  flex: 0 0 1.75rem;
+  width: 1.75rem;
+  height: 1.75rem;
+  min-width: 1.75rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #86efac;
+  background: rgba(34, 197, 94, 0.14);
+  border: 1px solid rgba(34, 197, 94, 0.35);
+  border-radius: 50%;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+/* Single text column so every line shares the same left edge after the badge */
+.instructionsList li > .listItemBody {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: block;
+  margin: 0;
+}
+
+.instructionsList strong {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.instructionsList strong.warning {
+  color: var(--error);
+  font-weight: 600;
+}
+
+/* Camera / video prerequisite — same family as list; quiet emphasis */
+.instructionsList li.cameraEmphasisItem {
+  padding: 0.625rem 0.875rem 0.625rem 0.5rem;
+  border-radius: 10px;
+  background: rgba(34, 197, 94, 0.06);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  border-left: 3px solid rgba(34, 197, 94, 0.75);
+}
+
+.instructionsList li.cameraEmphasisItem strong {
+  color: #bbf7d0;
+  font-weight: 600;
+}
+
+/* ——— Declaration ——— */
+.agreement {
+  margin-bottom: clamp(1.5rem, 4vw, 2rem);
+  padding: clamp(1.125rem, 3vw, 1.375rem) clamp(1.25rem, 3vw, 1.5rem);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, var(--surface) 100%);
+  border: 1px solid var(--border-input);
+  border-radius: 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.agreement:focus-within {
+  border-color: rgba(34, 197, 94, 0.35);
+  box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.12);
+}
+
+.agreementHeading {
+  margin: 0 0 0.875rem;
+  padding: 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  line-height: 1.35;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.75rem;
+}
+
+.requiredBadge {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--error);
+  background: rgba(248, 113, 113, 0.1);
+  border: 1px solid rgba(248, 113, 113, 0.25);
+  border-radius: 6px;
+  vertical-align: middle;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.875rem;
+  cursor: pointer;
+  margin: 0;
+}
+
+.checkbox {
+  flex-shrink: 0;
+  width: 1.125rem;
+  height: 1.125rem;
+  margin-top: 0.2rem;
+  accent-color: var(--primary);
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.checkbox:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.checkboxText {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  letter-spacing: 0.01em;
+}
+
+.requiredAsterisk {
+  color: var(--error);
+  font-weight: 600;
+  margin-left: 0.125rem;
+}
+
+/* ——— CTA ——— */
+.startWrap {
+  display: flex;
+  justify-content: center;
+  padding-top: 0.25rem;
+}
+
+.startBtn {
+  width: 100%;
+  max-width: 17.5rem;
+  padding: 0.9375rem 1.75rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.015em;
+  color: #fff;
+  background: linear-gradient(180deg, var(--primary) 0%, var(--primary-hover) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(34, 197, 94, 0.2);
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.15s ease;
+}
+
+.startBtn:hover:not(:disabled) {
+  background: var(--primary-hover);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 20px var(--primary-glow);
+  transform: translateY(-1px);
+}
+
+.startBtn:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
+.startBtn:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.startBtn:disabled {
+  opacity: 0.42;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ——— Loading ——— */
+.loadingPage {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: clamp(1.25rem, 3.5vh, 2rem) clamp(1.25rem, 4vw, 2rem);
+  box-sizing: border-box;
+  background: var(--bg);
+  background-image: radial-gradient(ellipse 90% 60% at 50% -25%, rgba(34, 197, 94, 0.05), transparent 52%);
+}
+
+.loadingTitle {
+  margin: 0;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.spinner {
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 2px solid var(--border);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loadingText {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+
+/* ——— Responsive ——— */
+@media (max-width: 480px) {
+  .instructionsList li {
+    gap: 0.75rem;
+  }
+
+  .instructionsList li::before {
+    flex: 0 0 1.625rem;
+    width: 1.625rem;
+    height: 1.625rem;
+    min-width: 1.625rem;
+    font-size: 0.6875rem;
+  }
+
+  .startBtn {
+    max-width: none;
+  }
+}

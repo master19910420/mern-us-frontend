@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="wecreateproblems dashboard preview">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1020"/>
+      <stop offset="100%" stop-color="#121735"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#16a34a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1040" cy="-120" r="360" fill="#22c55e" opacity="0.07"/>
+  <text x="70" y="85" font-family="DM Sans, Segoe UI, Arial, sans-serif" font-size="36" font-weight="700" fill="#f8fafc">wecreateproblems</text>
+  <text x="70" y="125" font-family="DM Sans, Segoe UI, Arial, sans-serif" font-size="28" font-weight="700" fill="#f8fafc">Skill Assessment Platform &amp; Job Simulation Tests</text>
+  <text x="70" y="160" font-family="DM Sans, Segoe UI, Arial, sans-serif" font-size="20" fill="#9ca3af">Built for modern hiring teams and data-driven candidate evaluation.</text>
+  <rect x="70" y="200" width="860" height="360" rx="20" fill="#171b36" stroke="#2d335c"/>
+  <rect x="70" y="200" width="860" height="10" rx="10" fill="url(#accent)" opacity="0.9"/>
+  <rect x="100" y="240" width="260" height="18" rx="9" fill="#2d335c"/>
+  <rect x="774" y="240" width="120" height="18" rx="9" fill="#1f9f50"/>
+  <rect x="100" y="286" width="400" height="180" rx="14" fill="#11152b" stroke="#2d335c"/>
+  <rect x="520" y="286" width="374" height="84" rx="14" fill="#11152b" stroke="#2d335c"/>
+  <rect x="520" y="382" width="374" height="84" rx="14" fill="#11152b" stroke="#2d335c"/>
+  <rect x="100" y="484" width="794" height="48" rx="12" fill="#11152b" stroke="#2d335c"/>
+  <rect x="118" y="501" width="170" height="14" rx="7" fill="#2d335c"/>
+  <rect x="306" y="501" width="220" height="14" rx="7" fill="#23284a"/>
+  <rect x="944" y="230" width="186" height="300" rx="20" fill="#171b36" stroke="#2d335c"/>
+  <circle cx="1037" cy="330" r="62" fill="#f1f5f9"/>
+  <circle cx="1037" cy="306" r="22" fill="#fb923c"/>
+  <rect x="1005" y="330" width="64" height="52" rx="28" fill="#fb923c"/>
+  <rect x="972" y="425" width="130" height="22" rx="11" fill="#1f9f50"/>
+  <text x="966" y="589" font-family="DM Sans, Segoe UI, Arial, sans-serif" font-size="16" fill="#9ca3af">wecreateproblems.net</text>
+</svg>

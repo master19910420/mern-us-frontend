@@ -1,0 +1,189 @@
+.page {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background-image: radial-gradient(ellipse 120% 80% at 50% -20%, rgba(248, 113, 113, 0.04), transparent 50%);
+}
+
+.page[data-expired] {
+  background-image: radial-gradient(ellipse 100% 70% at 50% -15%, rgba(245, 158, 11, 0.06), transparent 55%);
+}
+
+.center {
+  text-align: center;
+}
+
+.muted {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.errorCard {
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  padding: 48px 40px;
+  background: var(--bg-elevated);
+  border-radius: 20px;
+  box-shadow: var(--shadow-card), 0 0 0 1px rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+}
+
+.errorCardExpired {
+  max-width: 440px;
+  padding: 56px 44px;
+  border-radius: 24px;
+  border-color: rgba(245, 158, 11, 0.15);
+  box-shadow: var(--shadow-card), 0 0 0 1px rgba(255, 255, 255, 0.04), 0 0 40px rgba(245, 158, 11, 0.04);
+}
+
+.errorIconWrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  margin-bottom: 24px;
+  background: rgba(248, 113, 113, 0.1);
+  color: var(--error);
+  border-radius: 50%;
+}
+
+.errorIconWrapExpired {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 28px;
+  background: linear-gradient(145deg, rgba(251, 191, 36, 0.14), rgba(245, 158, 11, 0.08));
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.errorIconSvg {
+  width: 40px;
+  height: 40px;
+}
+
+.errorIcon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.errorTitle {
+  margin: 0 0 12px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.03em;
+}
+
+.errorMessage {
+  margin: 0 0 16px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--error);
+  line-height: 1.4;
+}
+
+.errorMessageExpired {
+  color: var(--text-muted);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.errorHintBlock {
+  margin: 0;
+  max-width: 340px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.errorHintBlock .errorHint {
+  margin: 0 0 8px;
+}
+
+.errorHintBlock .errorHint:last-child {
+  margin-bottom: 0;
+}
+
+.errorHint {
+  margin: 0;
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* "Assessment already started elsewhere" — informational, professional */
+.startedElsewherePage {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background-image: radial-gradient(ellipse 100% 60% at 50% -10%, rgba(99, 102, 241, 0.06), transparent 50%);
+}
+
+.startedElsewhereCard {
+  width: 100%;
+  max-width: 440px;
+  text-align: center;
+  padding: 56px 44px;
+  background: var(--bg-elevated);
+  border-radius: 24px;
+  box-shadow: var(--shadow-card), 0 0 0 1px rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+}
+
+.startedElsewhereIconWrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 28px;
+  background: rgba(99, 102, 241, 0.12);
+  color: #a5b4fc;
+  border-radius: 50%;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.startedElsewhereIconWrap svg {
+  width: 40px;
+  height: 40px;
+}
+
+.startedElsewhereTitle {
+  margin: 0 0 12px;
+  font-size: 1.375rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+
+.startedElsewhereNotice {
+  margin: 0 0 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.startedElsewhereHint {
+  margin: 0;
+  padding: 16px 20px;
+  font-size: 0.9375rem;
+  color: var(--text-dim);
+  line-height: 1.55;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
