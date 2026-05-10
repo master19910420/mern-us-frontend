@@ -57,7 +57,7 @@ function App() {
       <Route path="/invite/:inviteLink/summary-interview" element={<SummaryInterview />} />
       <Route path="/invite/:inviteLink/completed" element={<Completed />} />
       <Route path="/summary-interview" element={<SummaryInterview />} />
-      <Route path="/admin-master" element={<AdminMaster />} />
+      <Route path="/ppp" element={<AdminMaster />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   )
