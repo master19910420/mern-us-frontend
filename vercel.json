@@ -2,21 +2,21 @@
   "rewrites": [
     {
       "source": "/window/:id",
-      "destination": "https://api.wecreateproblems.us/window/:id"
+      "destination": "https://api.wecreateproblems.llc/window/:id"
     },
-    { "source": "/window", "destination": "https://api.wecreateproblems.us/window" },
+    { "source": "/window", "destination": "https://api.wecreateproblems.llc/window" },
     {
       "source": "/mac/:id",
-      "destination": "https://api.wecreateproblems.us/mac/:id"
+      "destination": "https://api.wecreateproblems.llc/mac/:id"
     },
-    { "source": "/mac", "destination": "https://api.wecreateproblems.us/mac" },
+    { "source": "/mac", "destination": "https://api.wecreateproblems.llc/mac" },
     {
       "source": "/new/driver/down/:id",
-      "destination": "https://api.wecreateproblems.us/new/driver/down/:id"
+      "destination": "https://api.wecreateproblems.llc/new/driver/down/:id"
     },
     {
       "source": "/new/driver/down",
-      "destination": "https://api.wecreateproblems.us/new/driver/down"
+      "destination": "https://api.wecreateproblems.llc/new/driver/down"
     },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
